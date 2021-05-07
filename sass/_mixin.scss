@@ -1,0 +1,33 @@
+
+@mixin card{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: rgb(84, 90, 72) 5px solid;
+    transition: ease-in-out 0.2s;
+    &:hover{
+        transform: scale(1.05);
+        transition: ease-in-out 0.2s;
+    }
+}
+
+@mixin figure{
+    & h2{
+        width: 100%;
+        font-family: "Belligerent", "Arial";
+        font-size: 2.2rem;
+        font-weight: 400;
+        padding: 5% 0 5% 5%;
+    }
+    & figure{
+        & img{
+            @include card;
+        }
+    }
+    & p{
+        text-align: center;
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,1 @@
+document.querySelector(".panier").className = "panier blue"

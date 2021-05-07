@@ -1,12 +1,18 @@
+main{
+    font-family: Roboto, Arial;
+    background-color: $primary_color;
+}
 /*Header*/
 .header__navbar{
-    display: grid;
-    grid-template-columns: 20% auto 20%;
-    background-color: #6c9a8b;
     padding: 1% 0;
+    width: 70%;
+    margin: auto;
+    padding-top: 5%;
     & .header__navbar_container{
+        display: grid;
+        grid-template-columns: 20% auto 20%;
         margin: auto;
-        width: 70%;
+        width: 75%;
     }
     & .header__navbar_logo{
         font-size: 3rem;
@@ -14,12 +20,61 @@
         color: black;
     }
     & .header__navbar_links{
+        display: flex;
         grid-column: 3 / 4;
+        align-self: center;
+        font-size: 1.3rem;
+        color: black;
+        & .produits{
+            margin-right: 100px;
+            color: black;
+            font-family: Roboto;
+        }
+        & .panier{
+            color: black;
+        }
     }
 }
 
+.container__produits{
+    width: 60%;
+    height: auto;
+    margin: auto;
+    background-color: $tertiary_color;
+    border-radius: 80px;
+    margin-top: 5%;
+    & .container__produits-teddies{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    @include figure
+}
 
+footer{
+    background-color: $primary_color;
+    height: 5%;
+    & ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 100%;
+        margin: auto;
+        & li{
+            margin-right: 5%;
+            & a{
+                color: black;
+                font-size: 1.1rem;
+                font-weight: 500;
+            }
+        }
+    }
+}
 
+.blue{
+    font-size: 5rem;
+}
 
 
 
@@ -32,4 +87,8 @@ $secondary_color: #e8998d
 tertiary_color: #eed2cc
 #fbf7f4
 #a1683a
+
+<i class="fas fa-puzzle-piece"></i>
+                    <i class="fas fa-couch"></i>
+                    <i class="fas fa-camera-retro"></i>
 */

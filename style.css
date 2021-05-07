@@ -3,16 +3,23 @@
   src: url("font/belligerent.ttf");
 }
 /*Color*/
+main {
+  font-family: Roboto, Arial;
+  background-color: #adc5bd;
+}
+
 /*Header*/
 .header__navbar {
-  display: grid;
-  grid-template-columns: 20% auto 20%;
-  background-color: #6c9a8b;
   padding: 1% 0;
+  width: 70%;
+  margin: auto;
+  padding-top: 5%;
 }
 .header__navbar .header__navbar_container {
+  display: grid;
+  grid-template-columns: 20% auto 20%;
   margin: auto;
-  width: 70%;
+  width: 75%;
 }
 .header__navbar .header__navbar_logo {
   font-size: 3rem;
@@ -20,7 +27,82 @@
   color: black;
 }
 .header__navbar .header__navbar_links {
+  display: flex;
   grid-column: 3/4;
+  align-self: center;
+  font-size: 1.3rem;
+  color: black;
+}
+.header__navbar .header__navbar_links .produits {
+  margin-right: 100px;
+  color: black;
+  font-family: Roboto;
+}
+.header__navbar .header__navbar_links .panier {
+  color: black;
+}
+
+.container__produits {
+  width: 60%;
+  height: auto;
+  margin: auto;
+  background-color: #d6c7c4;
+  border-radius: 80px;
+  margin-top: 5%;
+}
+.container__produits .container__produits-teddies {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.container__produits h2 {
+  width: 100%;
+  font-family: "Belligerent", "Arial";
+  font-size: 2.2rem;
+  font-weight: 400;
+  padding: 5% 0 5% 5%;
+}
+.container__produits figure img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: #545a48 5px solid;
+  transition: ease-in-out 0.2s;
+}
+.container__produits figure img:hover {
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+}
+.container__produits p {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+
+footer {
+  background-color: #adc5bd;
+  height: 5%;
+}
+footer ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+}
+footer ul li {
+  margin-right: 5%;
+}
+footer ul li a {
+  color: black;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.blue {
+  font-size: 5rem;
 }
 
 /*
@@ -30,6 +112,10 @@ $secondary_color: #e8998d
 tertiary_color: #eed2cc
 #fbf7f4
 #a1683a
+
+<i class="fas fa-puzzle-piece"></i>
+                    <i class="fas fa-couch"></i>
+                    <i class="fas fa-camera-retro"></i>
 */
 
 /*# sourceMappingURL=style.css.map */
