@@ -36,20 +36,6 @@ main{
     }
 }
 
-.container__produits{
-    width: 60%;
-    height: auto;
-    margin: auto;
-    background-color: $tertiary_color;
-    border-radius: 80px;
-    margin-top: 5%;
-    & .container__produits-teddies{
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-    @include figure
-}
 
 footer{
     background-color: $primary_color;
