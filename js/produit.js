@@ -28,12 +28,19 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
     let colors = data.colors
     for (let i = 0; i < colors.length; i++) {
         console.log(colors[i])
-    let div = document.createElement('p')
-    div.innerHTML = colors[i]
-    cardbody.appendChild(div)
-    console.log(div)
-       // color.innerText = colors[i]
+    let btn = document.createElement('button')
+        btn.setAttribute("class", "btn btn-primary")
+        btn.setAttribute("value", `${colors[i]}`)
+        btn.innerHTML = colors[i]
+        cardbody.appendChild(btn)
+        console.log(btn)
+        const btnValue = btn.value
+        btn.onclick = (val =>{
+        localStorage.setItem("color", `${btnValue}`)
+    })
+    console.log(btnValue)
     }
-    
-
 })
+
+//localStorage.setItem("nom", "Zheyn")
+//localStorage.getItem("nom", "Zheyn")
