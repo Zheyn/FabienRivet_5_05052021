@@ -12,7 +12,8 @@ let name1 = document.querySelector(".name1");
 let description = document.querySelector(".description");
 let price = document.querySelector(".price");
 let color = document.querySelector(".colors");
-let cardbody = document.querySelector(".card-body");
+let optionColor = document.querySelector(".option");
+let btn = document.querySelector(".btn");
 
 fetch(`http://localhost:3000/api/teddies/${id}`)
   .then((response) => {
@@ -28,27 +29,33 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
     let colors = data.colors;
     for (let i = 0; i < colors.length; i++) {
       console.log(colors[i]);
-      let btn = document.createElement("button");
-      btn.setAttribute("class", "btn btn-primary");
-      btn.setAttribute("value", `${colors[i]}`);
-      btn.innerHTML = colors[i];
-      cardbody.appendChild(btn);
-      console.log(btn);
-      const btnValue = btn.value;
-
-      btn.onclick = (val) => {
-        localStorage.setItem("Color", `${btnValue}`);
-      };
-      let cartStorage = {
-          nomProduit: data.name,
-          imgProduit: data.imageUrl,
-          idProduit: data._id,
-          prixProduit: data.price /100,
-          colorProduit: `${btnValue}`
-      }
-      console.log(cartStorage)
+      let option = document.createElement("option");
+      option.setAttribute("color", `${colors[i]}`);
+      const btnValue = option.color;
+      option.innerHTML = `<option value="${btnValue}">${colors[i]}</option>`;
+      optionColor.appendChild(option);
+      console.dir(optionColor);
     }
+    
+    btn.addEventListener("click", (e) =>{
+      e.preventDefault();
+      const choixForm = optionColor.value
+      let cartStorage = {
+        nomProduit: data.name,
+        imgProduit: data.imageUrl,
+        idProduit: data._id,
+        prixProduit: data.price / 100,
+        couleurProduit: choixForm
+      };
+      console.log(cartStorage)
+    })
   });
+  
 
 //localStorage.setItem("nom", "Zheyn")
 //localStorage.getItem("nom", "Zheyn")
+//onchange
+// Menu déroulant >> bouton
+/*btn.onclick = (val) => {
+      localStorage.setItem("Product", `${cartStorage}`);
+    }; */

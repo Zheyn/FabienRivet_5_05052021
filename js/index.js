@@ -1,4 +1,4 @@
- let categories = ['teddies', 'cameras', 'furniture']
+ let categories = ['teddies']
  let main = document.getElementById('main')
      
      for (let i = 0; i < categories.length; i++){
