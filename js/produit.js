@@ -48,6 +48,16 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
         couleurProduit: choixForm
       };
       console.log(cartStorage)
+      let cartLocalStorage = JSON.parse(localStorage.getItem("produit"));
+      if (cartLocalStorage) {
+        cartLocalStorage.push(cartStorage);
+        localStorage.setItem("produit", JSON.stringify(cartLocalStorage));
+      } else {
+        cartLocalStorage = [];
+        cartLocalStorage.push(cartStorage);
+        localStorage.setItem("produit", JSON.stringify(cartLocalStorage));
+        console.log(cartLocalStorage)
+      }
     })
   });
   
