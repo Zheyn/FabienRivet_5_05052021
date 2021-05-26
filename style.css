@@ -42,6 +42,10 @@ main {
   color: black;
 }
 
+.btn_val {
+  margin: 2% 0 10% 0;
+}
+
 footer {
   background-color: #adc5bd;
   height: 5%;
