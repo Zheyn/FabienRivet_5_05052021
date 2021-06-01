@@ -1,6 +1,6 @@
  let categories = ['teddies']
  let main = document.getElementById('main')
-     
+ chiffrePanier() 
      for (let i = 0; i < categories.length; i++){
          
          fetch('http://localhost:3000/api/' + categories[i])

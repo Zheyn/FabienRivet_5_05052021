@@ -46,6 +46,14 @@ main {
   margin: 2% 0 10% 0;
 }
 
+.form_cart-none {
+  display: none !important;
+}
+
+.numero_panier {
+  color: brown;
+}
+
 footer {
   background-color: #adc5bd;
   height: 5%;

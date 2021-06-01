@@ -3,6 +3,11 @@
 const urlid = window.location.search;
 console.log(urlid);
 
+let cartLocalStorage = JSON.parse(localStorage.getItem("produit"));
+    if (cartLocalStorage === null) {
+        document.querySelector('.numero_panier').innerText = 0
+      }
+      
 // Suppression du "?" avec la méthode slice
 const id = urlid.slice(1);
 console.log(id);
@@ -58,6 +63,9 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
         localStorage.setItem("produit", JSON.stringify(cartLocalStorage));
         console.log(cartLocalStorage)
       }
+      let numeroCart = cartLocalStorage.length
+        document.querySelector('.numero_panier').innerText = numeroCart
+        console.log(numeroCart)
     })
   });
   

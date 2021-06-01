@@ -40,9 +40,16 @@ main{
     margin: 2% 0 10% 0;
 }
 
+.form_cart-none{
+    display: none !important;
+}
+.numero_panier{
+    color: brown;
+}
 footer{
     background-color: $primary_color;
     height: 5%;
+    
     & ul{
         display: flex;
         justify-content: center;
