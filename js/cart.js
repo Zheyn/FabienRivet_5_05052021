@@ -94,7 +94,8 @@ const formValues = {
   Prénom: document.querySelector('#form_prenom').value,
   Adresse: document.querySelector('#form_adresse').value,
   Ville: document.querySelector('#form_ville').value,
-  CodePostal: document.querySelector('#form_codep').value
+  CodePostal: document.querySelector('#form_codep').value,
+  Email : document.querySelector('#form_email').value
 }
 
 // "^" = début de la séquence, "$" = fin de la séquence
@@ -103,18 +104,70 @@ function nomControle() {
   if (/^[A-Za-z]{3,20}$/.test(formValues.Nom)) {
     console.log("ok")
     return true
+    
   } else {
     console.log("ko")
+    return false
   }
 }
-
-  if (nomControle()) {
+function prenomControle() {
+  if (/^[A-Za-z]{3,20}$/.test(formValues.Prénom)) {
+    console.log("ok")
+    return true
+    
+  } else {
+    console.log("ko")
+    return false
+  }
+}
+function adresseControle() {
+  if (/^[A-Za-z0-9\u00C0-\u00FF\s-]{5,50}$/.test(formValues.Adresse)) {
+    console.log("ok")
+    return true
+    
+  } else {
+    console.log("ko")
+    return false
+  }
+}
+function villeControle() {
+  if (/^[A-Za-z]{3,20}$/.test(formValues.Ville)) {
+    console.log("ok")
+    return true
+    
+  } else {
+    console.log("ko")
+    return false
+  }
+}
+function codepControle() {
+  if (/^[0-9]{5}$/.test(formValues.CodePostal)) {
+    console.log("ok")
+    return true
+    
+  } else {
+    console.log("ko")
+    return false
+  }
+}
+function emailControle() {
+  if (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formValues.Email)) {
+    console.log("ok")
+    return true
+    
+  } else {
+    console.log("ko")
+    return false
+  }
+}
+console.log(nomControle())
+  if (nomControle() && prenomControle() && adresseControle() && villeControle() && codepControle() && emailControle() === true) {
+    console.log('ok1')
   // Mettre l'objet 'formValues' dans le localStorage
   localStorage.setItem('formValues', JSON.stringify(formValues))
   } else {
-    
+    console.log('ko1')
   }
-
 
 // Mettre les values du formulaire et les produits dans un objet à envoyer vers le serveur
 const aEnvoyer = {
@@ -139,4 +192,5 @@ remplirChampsVideForm('form_prenom', 'Prénom')
 remplirChampsVideForm('form_adresse', 'Adresse')
 remplirChampsVideForm('form_ville', 'Ville')
 remplirChampsVideForm('form_codep', 'CodePostal')
+remplirChampsVideForm('form_email', 'Email')
 
