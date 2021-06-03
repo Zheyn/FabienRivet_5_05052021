@@ -50,6 +50,10 @@ main {
   display: none !important;
 }
 
+.champ_obligatoire {
+  color: #e22b2b;
+}
+
 .numero_panier {
   color: brown;
 }

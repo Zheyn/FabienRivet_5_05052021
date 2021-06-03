@@ -88,14 +88,55 @@ if (cartLocalStorage === null) {
 const btnForm = document.querySelector('.btn_form')
 btnForm.addEventListener('click', (e) => {
   e.preventDefault()
-localStorage.setItem('Nom', document.querySelector('#form_nom').value)
-localStorage.setItem('Prénom', document.querySelector('#form_prenom').value)
-localStorage.setItem('Adresse', document.querySelector('#form_adresse').value)
-localStorage.setItem('Ville', document.querySelector('#form_ville').value)
-localStorage.setItem('Code postal', document.querySelector('#form_codep').value)
-console.log(document.querySelector('#form_nom').value)
-console.log(document.querySelector('#form_prenom').value)
-console.log(document.querySelector('#form_adresse').value)
-console.log(document.querySelector('#form_ville').value)
-console.log(document.querySelector('#form_codep').value)
+// Récupération des valeurs du formulaire
+const formValues = {
+  Nom: document.querySelector('#form_nom').value,
+  Prénom: document.querySelector('#form_prenom').value,
+  Adresse: document.querySelector('#form_adresse').value,
+  Ville: document.querySelector('#form_ville').value,
+  CodePostal: document.querySelector('#form_codep').value
+}
+
+// "^" = début de la séquence, "$" = fin de la séquence
+// .test = Une méthode de l'objet RegExp testant la présence d'une correspondance dans une chaîne de caractères. Elle renvoie true ou false.
+function nomControle() {
+  if (/^[A-Za-z]{3,20}$/.test(formValues.Nom)) {
+    console.log("ok")
+    return true
+  } else {
+    console.log("ko")
+  }
+}
+
+  if (nomControle()) {
+  // Mettre l'objet 'formValues' dans le localStorage
+  localStorage.setItem('formValues', JSON.stringify(formValues))
+  } else {
+    
+  }
+
+
+// Mettre les values du formulaire et les produits dans un objet à envoyer vers le serveur
+const aEnvoyer = {
+  cartLocalStorage,
+  formValues
+}
+console.log(aEnvoyer)
 })
+
+//Mettre le contenu du local storage dans le formulaire
+// Prendre la key dans la local storage
+const dataLocalStorage = localStorage.getItem('formValues')
+// Convertir la chaîne de caratères en objet javascript
+const dataLocalStorageParse = JSON.parse(dataLocalStorage)
+// Fonction pour que le champs du formulaire soit rempli par les données du local storage
+// Avec paramétres (querySelector et objet)
+function remplirChampsVideForm (querySelector, objet){
+  document.querySelector(`#${querySelector}`).value = dataLocalStorageParse[objet]
+}
+remplirChampsVideForm('form_nom', 'Nom')
+remplirChampsVideForm('form_prenom', 'Prénom')
+remplirChampsVideForm('form_adresse', 'Adresse')
+remplirChampsVideForm('form_ville', 'Ville')
+remplirChampsVideForm('form_codep', 'CodePostal')
+
