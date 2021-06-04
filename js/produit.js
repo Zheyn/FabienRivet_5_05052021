@@ -3,9 +3,11 @@
 const urlid = window.location.search;
 console.log(urlid);
 
-let cartLocalStorage = JSON.parse(localStorage.getItem("produit"));
+let cartLocalStorage = JSON.parse(localStorage.getItem("products"));
     if (cartLocalStorage === null) {
         document.querySelector('.numero_panier').innerText = 0
+      }else{
+        document.querySelector('.numero_panier').innerText = cartLocalStorage.length
       }
       
 // Suppression du "?" avec la méthode slice
@@ -53,14 +55,14 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
         couleurProduit: choixForm
       };
       console.log(cartStorage)
-      let cartLocalStorage = JSON.parse(localStorage.getItem("produit"));
+      let cartLocalStorage = JSON.parse(localStorage.getItem("products"));
       if (cartLocalStorage) {
         cartLocalStorage.push(cartStorage);
-        localStorage.setItem("produit", JSON.stringify(cartLocalStorage));
+        localStorage.setItem("products", JSON.stringify(cartLocalStorage));
       } else {
         cartLocalStorage = [];
         cartLocalStorage.push(cartStorage);
-        localStorage.setItem("produit", JSON.stringify(cartLocalStorage));
+        localStorage.setItem("products", JSON.stringify(cartLocalStorage));
         console.log(cartLocalStorage)
       }
       let numeroCart = cartLocalStorage.length
@@ -68,12 +70,3 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
         console.log(numeroCart)
     })
   });
-  
-
-//localStorage.setItem("nom", "Zheyn")
-//localStorage.getItem("nom", "Zheyn")
-//onchange
-// Menu déroulant >> bouton
-/*btn.onclick = (val) => {
-      localStorage.setItem("Product", `${cartStorage}`);
-    }; */

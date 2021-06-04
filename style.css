@@ -5,7 +5,7 @@
 /*Color*/
 main {
   font-family: Roboto, Arial;
-  background-color: #adc5bd;
+  background-color: #c8d6d2;
 }
 
 /*Header*/
@@ -59,7 +59,7 @@ main {
 }
 
 footer {
-  background-color: #adc5bd;
+  background-color: #c8d6d2;
   height: 5%;
 }
 footer ul {

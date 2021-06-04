@@ -1,6 +1,6 @@
 //Chiffre panier
 function chiffrePanier () {
-    let cartLocalStorage = JSON.parse(localStorage.getItem("produit"));
+    let cartLocalStorage = JSON.parse(localStorage.getItem("products"));
     if (cartLocalStorage === null) {
         document.querySelector('.numero_panier').innerText = 0
       } else {
