@@ -1,13 +1,18 @@
-main{
-    font-family: Roboto, Arial;
+body{
     background-color: $primary_color;
 }
-/*Header*/
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: Roboto, Arial;
+    background-color: $primary_color;
+    height: 100vh;
+}
+//////////////////*Header*////////////////
 .header__navbar{
-    padding: 1% 0;
-    width: 70%;
-    margin: auto;
-    padding-top: 5%;
+    color: $secondary_color;
+    
     & .header__navbar_container{
         display: grid;
         grid-template-columns: 20% auto 20%;
@@ -43,12 +48,61 @@ main{
 .form_cart-none{
     display: none !important;
 }
-.champ_obligatoire{
-    color: rgb(226, 43, 43);
-}
+
 .numero_panier{
     color: brown;
 }
+///////////////////index////////////////////////////
+h2{
+    text-align: center;
+    font-size: 3rem !important;
+    font-family: "Belligerent", "Arial";
+    padding: 2% 0 !important;
+}
+.card{
+    width: 300px;
+    & .size_img{
+        width: 298px;
+        height: 300px;
+        object-fit: cover;
+       }
+    & .card-body{
+        width: 300px;
+    }
+    
+}
+///////////////////Page product.html////////////////
+.card_product{
+    margin-bottom: auto;
+    & .card-body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    & .name1{
+    font-family: "Belligerent", "Arial";
+    font-size: 2rem;
+    }
+    & .description{
+        padding: 2% 0;
+    }
+    & .price{
+        padding: 2% 0;
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+    & button{
+        margin: 2% 0;
+    }
+}
+//////////////////////////Panier//////////////////
+.formulaire{
+    background-color: $primary_color;
+}
+.champ_obligatoire{
+    color: rgb(226, 43, 43);
+}
+//////////////////footer/////////////////////
 footer{
     background-color: $primary_color;
     height: 5%;
@@ -76,6 +130,49 @@ footer{
 }
 
 
+.nav-link{
+    color: black !important;
+}
+.bloc_left_price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+}
+.add_to_cart_block .price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+    margin-bottom: 0;
+}
+.add_to_cart_block .price_discounted {
+    color: #343a40;
+    text-align: center;
+    text-decoration: line-through;
+    font-size: 140%;
+}
+.product_rassurance {
+    padding: 10px;
+    margin-top: 15px;
+    background: #ffffff;
+    border: 1px solid #6c757d;
+    color: #6c757d;
+}
+.product_rassurance .list-inline {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+.product_rassurance .list-inline li:hover {
+    color: #343a40;
+}
+.reviews_product .fa-star {
+    color: gold;
+}
+.pagination {
+    margin-top: 20px;
+}
 
 
 

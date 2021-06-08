@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Overlock+SC&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/17ba41adb4.js" crossorigin="anonymous"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="reset.css">
     <script src="js/utils.js" defer></script>
@@ -16,7 +17,39 @@
 <body>
     <main>
         <header>
-            <nav class="header__navbar">
+            <nav class="navbar navbar-expand-md navbar-dark header__navbar">
+                <div class="container header__navbar_container">
+                    <a class="navbar-brand header__navbar_logo" href="index.html">Orinoco</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+            
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+                        <ul class="navbar-nav m-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Produits</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="cart.html">Panier</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+            
+                        <form class="form-inline my-2 my-lg-0">
+                            <a class="btn btn-info btn-sm ml-3" href="cart.html">
+                                <i class="fa fa-shopping-cart"></i> Panier
+                                <span class="badge badge-light numero_panier"></span>
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <!-- <nav class="header__navbar">
               <div class="header__navbar_container">
                 <a href="#" class="header__navbar_logo">Orinoco</a>
                 <ul class="header__navbar_links">
@@ -28,7 +61,7 @@
                     </li>
                 </ul>
               </div>
-            </nav>
+            </nav> -->
         </header>
         <div id="main">
             
@@ -50,3 +83,4 @@
     </main>
 </body>
 </html>
+

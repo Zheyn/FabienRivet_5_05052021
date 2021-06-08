@@ -164,39 +164,39 @@ btnForm.addEventListener("click", (e) => {
     emailControle() === true
   ) {
     console.log("ok1");
+    // Mettre les values du formulaire et les produits dans un objet à envoyer vers le serveur
+    let idProdArray = [];
+    for (let i = 0; i < cartLocalStorage.length; i++) {
+      idProd = cartLocalStorage[i].idProduit;
+      idProdArray.push(idProd);
+      console.log(idProd);
+    }
+    let aEnvoyer = {
+      products: idProdArray,
+      contact: contact,
+    };
+    console.log("aEnvoyer", aEnvoyer);
+
+    fetch("http://localhost:3000/api/teddies/order", {
+      method: "POST",
+      body: JSON.stringify(aEnvoyer),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        localStorage.setItem("confirmation", JSON.stringify(data));
+      });
+    document.location.href = "confirmation.html";
+    
     // Mettre l'objet 'formValues' dans le localStorage
     localStorage.setItem("contact", JSON.stringify(contact));
   } else {
     console.log("ko1");
   }
-
-  // Mettre les values du formulaire et les produits dans un objet à envoyer vers le serveur
-  let idProdArray = [];
-  for (let i = 0; i < cartLocalStorage.length; i++) {
-    idProd = cartLocalStorage[i].idProduit;
-    idProdArray.push(idProd);
-    console.log(idProd);
-  }
-  let aEnvoyer = {
-    products: idProdArray,
-    contact: contact,
-  };
-  console.log("aEnvoyer", aEnvoyer);
-
-  fetch("http://localhost:3000/api/teddies/order", {
-    method: "POST",
-    body: JSON.stringify(aEnvoyer),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-  .then (response => {
-    return response.json()
-    console.dir(response);
-  }).then (data => {
-    console.log(data);
-  })
-  document.location.href = ""
 });
 
 //Mettre le contenu du local storage dans le formulaire
