@@ -65,21 +65,31 @@ h2 {
   padding: 2% 0 !important;
 }
 
+h4 {
+  font-family: "Belligerent", "Arial";
+  font-size: 1.5rem !important;
+  text-align: center;
+}
+
 .card {
+  transition: 0.3s;
   width: 300px;
+}
+.card:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+  box-shadow: -1px -1px 22px -5px rgba(0, 0, 0, 0.4);
 }
 .card .size_img {
   width: 298px;
   height: 300px;
   object-fit: cover;
 }
-.card .card-body {
-  width: 300px;
+.card .btn {
+  width: 30%;
+  margin: 5% 0 0 0;
 }
 
-.card_product {
-  margin-bottom: auto;
-}
 .card_product .card-body {
   display: flex;
   flex-direction: column;

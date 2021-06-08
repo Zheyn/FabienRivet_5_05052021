@@ -194,6 +194,8 @@ btnForm.addEventListener("click", (e) => {
     
     // Mettre l'objet 'formValues' dans le localStorage
     localStorage.setItem("contact", JSON.stringify(contact));
+    // Vider le localStorage
+    localStorage.removeItem('products');
   } else {
     console.log("ko1");
   }
