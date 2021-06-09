@@ -7,7 +7,9 @@ let prixTotalCalcul = [];
 if (cartLocalStorage === null) {
   document.querySelector(".numero_panier").innerText = 0;
   containerCart.innerHTML = `
-  <div>Panier vide</div>
+  <div id="center">
+    <div class="container_confirmation">Panier vide</div>
+  </div>
   `;
 } else {
   // Faire apparaître le formulaire si il y a un produit ou + dans le panier
@@ -33,7 +35,7 @@ if (cartLocalStorage === null) {
                           <div class="mr-1"><img class="rounded" src="` +
           cartLocalStorage[i].imgProduit +
           `" width="150"></div>
-                          <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">` +
+                          <div class="d-flex flex-column align-items-center product-details"><span class="m-3 font-weight-bold">` +
           cartLocalStorage[i].nomProduit +
           `</span>
                               <div class="d-flex flex-row product-desc">
@@ -42,8 +44,8 @@ if (cartLocalStorage === null) {
           `</span></div>
                               </div>
                           </div>
-                          <div class="d-flex flex-row align-items-center qty"><i class="fa fa-minus text-danger"></i>
-                              <h5 class="text-grey mt-1 mr-1 ml-1">1</h5><i class="fa fa-plus text-success"></i>
+                          <div class="d-flex flex-row align-items-center qty"><i class="fa fa-minus text-info p-2"></i>
+                              <h5 class="text-grey mt-1 mr-1 ml-1">1</h5><i class="fa fa-plus text-info p-2"></i>
                           </div>
                           <div>
                               <h5 class="text-grey">` +
@@ -73,7 +75,7 @@ if (cartLocalStorage === null) {
               <div class="d-flex justify-content-center row ra">
                   <div class="col-md-8">
                       <div class="d-flex flex-row justify-content-end align-items-center p-2 bg-white mt-4 px-3 rounded">
-                          <div>Total TTC: ${prixTotal}€</div>
+                          <div class="font-weight-bold">Total TTC: ${prixTotal}€</div>
                       </div>
                   </div>
               </div>
@@ -197,6 +199,8 @@ btnForm.addEventListener("click", (e) => {
     // Vider le localStorage
     localStorage.removeItem('products');
   } else {
+    let alertNone = document.querySelector('.alert_form')
+    alertNone.classList.remove('alert_none')
     console.log("ko1");
   }
 });
@@ -206,7 +210,11 @@ btnForm.addEventListener("click", (e) => {
 const dataLocalStorage = localStorage.getItem("contact");
 // Convertir la chaîne de caratères en objet javascript
 const dataLocalStorageParse = JSON.parse(dataLocalStorage);
-// Fonction pour que le champs du formulaire soit rempli par les données du local storage
+
+if (dataLocalStorage === null) {
+  console.log("contact null");
+} else {
+  // Fonction pour que le champs du formulaire soit rempli par les données du local storage
 // Avec paramétres (querySelector et objet)
 function remplirChampsVideForm(querySelector, objet) {
   document.querySelector(`#${querySelector}`).value =
@@ -218,3 +226,4 @@ remplirChampsVideForm("form_adresse", "address");
 remplirChampsVideForm("form_ville", "city");
 remplirChampsVideForm("form_codep", "zip");
 remplirChampsVideForm("form_email", "email");
+}

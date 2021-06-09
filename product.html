@@ -1,89 +1,122 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Overlock+SC&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/17ba41adb4.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overlock+SC&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/17ba41adb4.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- Bootstrap -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="reset.css">
-    
-    <script src="js/produit.js" defer></script> 
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css" />
+
+    <script src="js/produit.js" defer></script>
     <title>Orinoco</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <header>
-            <nav class="navbar navbar-expand-md navbar-dark header__navbar">
-                <div class="container header__navbar_container">
-                    <a class="navbar-brand header__navbar_logo" href="index.html">Orinoco</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-            
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
-                        <ul class="navbar-nav m-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Accueil</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Produits</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="cart.html">Panier</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
-                            </li>
-                        </ul>
-            
-                        
-                            <a class="btn-info btn-sm ml-3" href="cart.html">
-                                <i class="fa fa-shopping-cart"></i> Panier
-                                <span class="badge badge-light numero_panier"></span>
-                            </a>
-                        
-                    </div>
-                </div>
-            </nav>
-        </header>
-        
-        <div class="d-flex justify-content-center card_product">
-            <div class="card" style="width: 35rem;">
-                <img src="" class="card-img-top" alt="">
-                <div class="card-body card-body_product">
-                  <p class="card-text name1"></p>
-                  <p class="description"></p>
-                  <p class="price"></p>
-                  <select class="form-select option">
-                          
-                  </select>
-                  <button class="btn btn-primary" id="btn_panier">Ajouter au panier</button>
-                </div>
+      <header>
+        <nav class="navbar navbar-expand-md navbar-dark header__navbar">
+          <div class="container header__navbar_container">
+            <a class="navbar-brand header__navbar_logo" href="index.html"
+              >Orinoco</a
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarsExampleDefault"
+              aria-controls="navbarsExampleDefault"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div
+              class="collapse navbar-collapse justify-content-end"
+              id="navbarsExampleDefault"
+            >
+              <ul class="navbar-nav m-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Accueil</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Produits</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="cart.html">Panier</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
+
+              <a class="btn-info btn-sm ml-3" href="cart.html">
+                <i class="fa fa-shopping-cart"></i> Panier
+                <span class="badge badge-light numero_panier"></span>
+              </a>
             </div>
+          </div>
+        </nav>
+      </header>
+
+      <div class="d-flex justify-content-center card_product">
+        <div class="card" style="width: 35rem">
+          <div class="zoom">
+            <img src="" class="card-img-top" alt="" />
+          </div>
+          <div class="card-body card-body_product">
+            <p class="card-text name1"></p>
+            <p class="description"></p>
+            <p class="price"></p>
+            <select class="form-select option"></select>
+            <button class="btn btn-primary" id="btn_panier">
+              Ajouter au panier
+            </button>
+          </div>
         </div>
-        
-        <footer>
-            <ul>
-                <li>
-                    <a href="#">Mentions Légales</a>
-                </li>
-                <li>
-                    <a href="#">CGV</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-        </footer>
+      </div>
+
+      <footer>
+        <ul>
+          <li>
+            <a href="#">Mentions Légales</a>
+          </li>
+          <li>
+            <a href="#">CGV</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </footer>
     </main>
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
