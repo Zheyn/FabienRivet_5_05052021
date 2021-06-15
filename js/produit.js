@@ -1,15 +1,17 @@
-// Récupération de l'id dans l'url
-/*search	La partie de l'URL qui suit le symbole « ? », avec ce symbole inclus*/
-const urlid = window.location.search;
-console.log(urlid);
-
+// Pastille "Nombre d'article" sur le bouton panier
 let cartLocalStorage = JSON.parse(localStorage.getItem("products"));
     if (cartLocalStorage === null) {
         document.querySelector('.numero_panier').innerText = 0
       }else{
         document.querySelector('.numero_panier').innerText = cartLocalStorage.length
       }
-      
+
+
+// Récupération de l'id dans l'url
+/*search	La partie de l'URL qui suit le symbole « ? », avec ce symbole inclus*/
+const urlid = window.location.search;
+console.log(urlid);
+
 // Suppression du "?" avec la méthode slice
 const id = urlid.slice(1);
 console.log(id);
@@ -21,6 +23,7 @@ let price = document.querySelector(".price");
 let color = document.querySelector(".colors");
 let optionColor = document.querySelector(".option");
 let btn = document.querySelector(".btn");
+let titleProduit = document.querySelector('title')
 
 fetch(`http://localhost:3000/api/teddies/${id}`)
   .then((response) => {
@@ -32,6 +35,7 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
     name1.innerText = data.name;
     description.innerText = data.description;
     price.innerText = data.price / 100 + "€";
+    titleProduit.innerText = data.name;
 
     let colors = data.colors;
     for (let i = 0; i < colors.length; i++) {

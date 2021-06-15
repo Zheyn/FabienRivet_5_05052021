@@ -31,6 +31,10 @@ li {
   font-size: 1.2rem !important;
 }
 
+.btn-info {
+  margin: 0 !important;
+}
+
 #main h2 {
   text-align: center;
   font-size: 3rem !important;
