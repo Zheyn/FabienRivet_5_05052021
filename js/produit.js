@@ -6,7 +6,6 @@ let cartLocalStorage = JSON.parse(localStorage.getItem("products"));
         document.querySelector('.numero_panier').innerText = cartLocalStorage.length
       }
 
-
 // Récupération de l'id dans l'url
 /*search	La partie de l'URL qui suit le symbole « ? », avec ce symbole inclus*/
 const urlid = window.location.search;
