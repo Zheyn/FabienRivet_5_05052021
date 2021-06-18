@@ -2,7 +2,7 @@ let cartLocalStorage = JSON.parse(localStorage.getItem("products"));
 console.log(cartLocalStorage);
 let containerCart = document.querySelector(".container_cart");
 let prixTotalHtml = document.querySelector(".prix_total");
-let prixTotalCalcul = [];
+
 
 if (cartLocalStorage === null) {
   document.querySelector(".numero_panier").innerText = 0;
@@ -61,7 +61,7 @@ if (cartLocalStorage === null) {
         containerCart.appendChild(structureCart);
       });
   }
-
+  let prixTotalCalcul = [];
   for (let p = 0; p < cartLocalStorage.length; p++) {
     let prixDesProduits = cartLocalStorage[p].prixProduit;
     prixTotalCalcul.push(prixDesProduits);
@@ -130,7 +130,7 @@ btnForm.addEventListener("click", (e) => {
     }
   }
   function villeControle() {
-    if (/^[A-Za-z]{3,20}$/.test(contact.city)) {
+    if (/^[A-Za-z\s-]{3,50}$/.test(contact.city)) {
       console.log("ok");
       return true;
     } else {
@@ -191,8 +191,9 @@ btnForm.addEventListener("click", (e) => {
       })
       .then((data) => {
         localStorage.setItem("confirmation", JSON.stringify(data));
+        document.location.href = "confirmation.html";
       });
-    document.location.href = "confirmation.html";
+    
     
     // Mettre l'objet 'formValues' dans le localStorage
     localStorage.setItem("contact", JSON.stringify(contact));

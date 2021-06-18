@@ -29,13 +29,14 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
     return response.json();
   })
   .then((data) => {
+    // Injection des donneés du produit dans le code HTML
     console.log(data);
     card.src = data.imageUrl;
     name1.innerText = data.name;
     description.innerText = data.description;
     price.innerText = data.price / 100 + "€";
     titleProduit.innerText = data.name;
-
+    // Ajout de l'option couleur 
     let colors = data.colors;
     for (let i = 0; i < colors.length; i++) {
       console.log(colors[i]);
@@ -46,7 +47,7 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
       optionColor.appendChild(option);
       console.dir(optionColor);
     }
-    
+    // Envoyer les données des produits au clic du bouton dans le local storage
     btn.addEventListener("click", (e) =>{
       e.preventDefault();
       const choixForm = optionColor.value
