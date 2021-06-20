@@ -36,6 +36,7 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
     description.innerText = data.description;
     price.innerText = data.price / 100 + "€";
     titleProduit.innerText = data.name;
+    
     // Ajout de l'option couleur 
     let colors = data.colors;
     for (let i = 0; i < colors.length; i++) {
